@@ -1,6 +1,6 @@
-(ns no.jansenh.siri-et-test
+(ns no.jansenh.siri.core-test
   (:require [clojure.test :refer :all]
-            [no.jansenh.siri-et :refer :all]))
+            [no.jansenh.siri.core :refer :all]))
 
 (deftest verify-tests
   (testing "I verify true"

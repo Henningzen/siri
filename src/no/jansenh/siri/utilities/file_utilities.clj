@@ -8,14 +8,3 @@
   (let [file-path (io/file "data" filename)]
     (io/make-parents file-path)
     (spit file-path content)))
-
-
-(comment
-
-  (let [filename "output.txt"]
-    (write-to-data-file filename "Hello, this is a test file!\nThis is another line of text.\n")
-    (println "File written successfully."))
-
-  ;; ---> comment
-  )
-

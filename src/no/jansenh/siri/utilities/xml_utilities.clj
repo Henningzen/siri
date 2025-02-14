@@ -1,5 +1,6 @@
 (ns no.jansenh.siri.utilities.xml-utilities
-  (:require [clojure.data.xml :as xml])
+  (:require [clojure.data.xml :as xml]
+            [clojure.java.io :as io])
   (:gen-class))
 
 
@@ -11,7 +12,6 @@
     (xml/parse-str xml-str)
     (catch org.xml.sax.SAXParseException e
       (println "XML Parsing Error: Malformed XML structure!")
-      (println (.getMessage e))
       nil)
     (catch Exception e
       (println "Unexpected Error while parsing XML!")
@@ -28,27 +28,3 @@
         (xml/parse stream))
       (throw (ex-info "File not found in resources folder" {:filename filename})))))
 
-
-(comment
-
-  ;; Testing the concepts:
-  (parse-xml-string "<root><child>Content</child></root>")
-  (parse-xml-string "<root><child>Broken XML</child><<</root>")
-  (parse-xml-resource-file "keep-me.xml")
-  (parse-xml-resource-file "no-exist.xml")
-
-  ;; ---> comment
-  )
-
-
-(comment
-  ;; keep for example
-  (let [tags (xml/element :foo {:foo-attr "foo value"}
-                          (xml/element :bar {:bar-attr "bar value"}
-                                       (xml/element :baz {} "The bajas value")))
-        file-name (io/resource "keep-me.xml")
-        path  "/home/jansenh/dev/siri/data/leave-me.xml"]
-    (with-open [out-file (java.io.FileWriter. path)]
-      (xml/emit tags out-file)))
-  ;; ---> comment
-  )

@@ -1,1 +1,7 @@
-{:greeting "World!"}
+{:greeting "World!"
+ :siri-et-endpoint-test "http://receiver.address.to/receive/data"
+ :siri-et-test {:receiver-endpoint "http://endpoint.address.to/receive/data"
+                :heartbeat-interval "PT1M"
+                :subscriber-ref "ENTUR_DEV"
+                :subsscriber-identifier "123456789"}
+ }

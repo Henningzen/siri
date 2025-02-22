@@ -27,3 +27,7 @@
 /checkouts
 /classes
 /target
+
+/data/**
+!/data/keep-me.txt
+

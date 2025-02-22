@@ -1,6 +1,6 @@
-# no.jansenh/siri-et
+# no.jansenh/siri
 
-NeTEx SIRI ET.
+NeTEx SIRI application.
 
 ## Installation
 

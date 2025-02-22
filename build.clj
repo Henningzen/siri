@@ -2,9 +2,9 @@
   (:refer-clojure :exclude [test])
   (:require [clojure.tools.build.api :as b]))
 
-(def lib 'no.jansenh/siri-et)
+(def lib 'no.jansenh/siri)
 (def version "0.1.0-SNAPSHOT")
-(def main 'no.jansenh.siri-et)
+(def main 'no.jansenh.siri.core)
 (def class-dir "target/classes")
 
 (defn test "Run all the tests." [opts]

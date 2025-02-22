@@ -1,6 +1,7 @@
 (ns no.jansenh.siri.core
   (:require [aero.core :as aero]
-            [clojure.java.io :as io])
+            [clojure.java.io :as io]
+            [no.jansenh.siri.utilities.time-date-utilities :as dtutils])
   (:gen-class))
 
 
@@ -19,7 +20,8 @@
 (defn -main
   "Main entry point to the application."
   [& args]
-  (greet {:arg (first args)}))
+  ((println (str "Application started " (dtutils/current-timestamp)))
+   (greet {:arg (first args)})))
 
 
 (comment

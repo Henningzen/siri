@@ -57,7 +57,7 @@
   ;; Test & validate
 
   (->> (generate-xml)
-       xml-to-string
+       (xml-to-string)
        (write-to-file "siri-subscrition.xml"))
 
   ;;---> comment

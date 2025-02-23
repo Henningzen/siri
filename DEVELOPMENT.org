@@ -1,0 +1,45 @@
+#+title:  Development
+#+author: Henning Jansen
+#+date:   2025-02-22
+#+STARTUP: content
+
+* no.jansenh.SIRI
+
+** SIRI example
++ https://github.com/entur/anshar/blob/master/Subscription-lifecycle.md
+
+** Web application
+   Using ngrok to enable public endpoint:
+   #+BEGIN_SRC shell
+     ngrok http http://localhost:3001
+     ngrok http --url=jansenh-dev.no.ngrok.app 3001
+   #+END_SRC
+
+
+** CURL
+   1. Subscribe siri-et EnTur
+   #+BEGIN_SRC shell
+     curl -X POST "https://api.entur.io/realtime/v1/subscribe" \
+     -H "Content-Type: application/xml" \
+     -d @siri-subscrition.xml -v
+   #+END_SRC
+
+   #+BEGIN_SRC script
+     curl -v localhost:3001
+     curl -v localhost:3001/echo -XPOST
+   #+END_SRC
+
+   #+BEGIN_SRC shell
+     curl -X POST "localhost:3001/siri/et" \
+     -H "Content-Type: application/xml" \
+     -d @siri-subscrition.xml -v
+   #+END_SRC
+
+   #+BEGIN_SRC shell
+     curl -X POST "https://jansenh-dev.no.ngrok.app/siri/et" \
+     -H "Content-Type: application/xml" \
+     -d @siri-subscrition.xml -v
+   #+END_SRC
+
+
+
